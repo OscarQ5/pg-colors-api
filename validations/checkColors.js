@@ -6,12 +6,12 @@ const checkName = (req, res, next) => {
     }
 };
 
-const checkBoolean = (req,res,next) => {
+const checkBoolean = (req, res, next) => {
     const fav = req.body.is_favorite
-    if (typeof fav === 'boolean'){
-        next()
+    if (typeof fav === 'boolean') {
+        return next();
     } else {
-        res.status(400).json({error: "is_favorite must be type boolean"})
+        res.status(400).json({ error: "is_favorite must be type boolean" })
     }
 };
 
